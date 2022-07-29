@@ -4,6 +4,9 @@
   <test thread-count="5" name="chrome">
   <parameter name="browser" value="chrome"></parameter>
   <parameter name ="url" value="http://leaftaps.com/opentaps/"></parameter>
+  <parameter name="username" value="DemoSalesManager"></parameter>
+  <parameter name="password" value="crmsfa"></parameter>
+  
     <classes>
       <class name="testcase.Createlead"/>
       <!--<class name="testcase.Deletelead"/>-->
@@ -12,6 +15,8 @@
   <test thread-count="5" name="Leads">
   <parameter name="browser" value="Firefox"></parameter>
   <parameter name ="url" value="http://leaftaps.com/opentaps/"></parameter>
+  <parameter name="username" value="DemoSalesManager"></parameter>
+  <parameter name="password" value="crmsfa"></parameter>
     <classes>
       <class name="testcase.Createlead"/>
       <!--<class name="testcase.Deletelead"/>-->

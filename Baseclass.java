@@ -15,9 +15,9 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class Baseclass {
 	public RemoteWebDriver driver;
 	
-	@Parameters({"browser","url"})
+	@Parameters({"browser","url","username","password"})
 	@BeforeMethod
-	public void preConditions(String browser,String url) {
+	public void preConditions(String browser,String url,String username,String password) {
 		if(browser.equalsIgnoreCase("chrome")) {
 		WebDriverManager.chromedriver().setup();
 		 driver = new ChromeDriver();
@@ -28,8 +28,8 @@ public class Baseclass {
 		driver.manage().window().maximize();
 		driver.get(url); 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-		driver.findElement(By.id("username")).sendKeys("DemoSalesManager");
-		driver.findElement(By.id("password")).sendKeys("crmsfa");
+		driver.findElement(By.id("username")).sendKeys(username);
+		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.className("decorativeSubmit")).click();
 		driver.findElement(By.linkText("CRM/SFA")).click();
 		driver.findElement(By.linkText("Leads")).click();
